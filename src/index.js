@@ -13,8 +13,8 @@ module.exports = function(eruda) {
         const changedTouches = toArr(e.changedTouches)
         each(e.touches, touch => {
           touches.push({
-            pageX: touch.pageX,
-            pageY: touch.pageY,
+            clientX: touch.clientX,
+            clientY: touch.clientY,
             changed: contain(changedTouches, touch)
           })
         })
@@ -84,15 +84,19 @@ module.exports = function(eruda) {
       ctx.font = 'bold 50px Helvetica,Arial,sans-serif'
 
       each(touches, touch => {
-        const { pageX, pageY, changed } = touch
-        const x = (pageX / innerWidth) * width
-        const y = (pageY / innerHeight) * height
+        const { clientX, clientY, changed } = touch
+        const x = (clientX / innerWidth) * width
+        const y = (clientY / innerHeight) * height
         if (changed) {
           ctx.fillStyle = '#f44336'
         } else {
           ctx.fillStyle = '#2196f3'
         }
-        ctx.fillText(`${Math.round(pageX)}, ${Math.round(pageY)}`, x + 50, y)
+        ctx.fillText(
+          `${Math.round(clientX)}, ${Math.round(clientY)}`,
+          x + 50,
+          y
+        )
         ctx.beginPath()
         ctx.arc(x, y, 25, 0, Math.PI * 2, true)
         ctx.closePath()

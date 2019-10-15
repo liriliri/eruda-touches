@@ -1,6 +1,6 @@
 {
   "name": "eruda-touches",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "eruda-touches.js",
   "scripts": {
     "dev": "webpack-dev-server --host 0.0.0.0",
