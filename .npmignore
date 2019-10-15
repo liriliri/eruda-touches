@@ -2,6 +2,8 @@
 .eslintrc.js
 .gitignore
 .npmignore
+.prettierignore
 .travis.yml
 index.html
 webpack.config.js
+prettier.config.js
