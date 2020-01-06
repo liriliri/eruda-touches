@@ -74,8 +74,10 @@ module.exports = function(eruda) {
       const { innerWidth, innerHeight } = window
       ctx.clearRect(0, 0, width, height)
 
+      const curTheme = evalCss.getCurTheme()
+
       if (touches.length === 0) {
-        ctx.fillStyle = '#707d8b'
+        ctx.fillStyle = curTheme.foreground
         ctx.font = 'bold 50px Helvetica,Arial,sans-serif'
         ctx.fillText('Touch the Screen', width / 2 - 200, height / 2)
         return
@@ -88,9 +90,9 @@ module.exports = function(eruda) {
         const x = (clientX / innerWidth) * width
         const y = (clientY / innerHeight) * height
         if (changed) {
-          ctx.fillStyle = '#f44336'
+          ctx.fillStyle = curTheme.consoleErrorForeground
         } else {
-          ctx.fillStyle = '#2196f3'
+          ctx.fillStyle = curTheme.accent
         }
         ctx.fillText(
           `${Math.round(clientX)}, ${Math.round(clientY)}`,
