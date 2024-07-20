@@ -1,13 +1,13 @@
 # eruda-touches
 
 [![NPM version][npm-image]][npm-url]
-[![Build status][travis-image]][travis-url]
+[![Build status][ci-image]][ci-url]
 [![License][license-image]][npm-url]
 
 [npm-image]: https://img.shields.io/npm/v/eruda-touches.svg
 [npm-url]: https://npmjs.org/package/eruda-touches
-[travis-image]: https://img.shields.io/travis/liriliri/eruda-touches.svg
-[travis-url]: https://travis-ci.org/liriliri/eruda-touches
+[ci-image]: https://img.shields.io/github/actions/workflow/status/liriliri/eruda-touches/main.yml?branch=master&style=flat-square
+[ci-url]: https://github.com/liriliri/eruda-touches/actions/workflows/main.yml 
 [license-image]: https://img.shields.io/npm/l/eruda-touches.svg
 
 Eruda plugin for visualizing screen touches.

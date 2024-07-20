@@ -1,5 +1,9 @@
-module.exports = function(eruda) {
-  const { evalCss, each, contain, toArr } = eruda.util
+const each = require('licia/each')
+const contain = require('licia/contain')
+const toArr = require('licia/toArr')
+
+module.exports = function (eruda) {
+  const { evalCss } = eruda.util
 
   class Touches extends eruda.Tool {
     constructor() {
@@ -8,14 +12,14 @@ module.exports = function(eruda) {
       this._style = evalCss(require('./style.scss'))
       this._touches = []
       this._isRunning = false
-      this._updateTouches = e => {
+      this._updateTouches = (e) => {
         const touches = []
         const changedTouches = toArr(e.changedTouches)
-        each(e.touches, touch => {
+        each(e.touches, (touch) => {
           touches.push({
             clientX: touch.clientX,
             clientY: touch.clientY,
-            changed: contain(changedTouches, touch)
+            changed: contain(changedTouches, touch),
           })
         })
         this._touches = touches
@@ -23,7 +27,7 @@ module.exports = function(eruda) {
     }
     init($el, container) {
       super.init($el, container)
-      $el.html(require('./template.hbs')())
+      $el.html('<canvas></canvas>')
       this._initCanvas()
       this._bindEvent()
     }
@@ -85,7 +89,7 @@ module.exports = function(eruda) {
 
       ctx.font = 'bold 50px Helvetica,Arial,sans-serif'
 
-      each(touches, touch => {
+      each(touches, (touch) => {
         const { clientX, clientY, changed } = touch
         const x = (clientX / innerWidth) * width
         const y = (clientY / innerHeight) * height

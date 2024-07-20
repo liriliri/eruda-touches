@@ -1,3 +1,7 @@
+## v2.1.0 (20 Jul 2024)
+
+* fix: eruda 3 not working
+
 ## v2.0.0 (6 Jan 2020)
 
 * feat: theme support
