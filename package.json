@@ -2,6 +2,7 @@
   "name": "eruda-touches",
   "version": "2.1.0",
   "main": "eruda-touches.js",
+  "description": "Eruda plugin for visualizing screen touches",
   "browserslist": [
     "since 2015",
     "not dead"
